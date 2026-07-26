@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="description" content="Ashwikha S - Computer Science Engineering Student specializing in C++, Data Structures, Algorithms & Software Development. View my portfolio, projects, and coding achievements.">
+    <meta name="keywords" content="Ashwikha S, Computer Science, Software Engineer, C++, Python, DSA, Portfolio, Competitive Programming">
+    <meta name="author" content="Ashwikha S">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Ashwikha S | Computer Science Engineer">
+    <meta property="og:description" content="Computer Science Engineering Student | Competitive Programmer | Problem Solver">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ashwikha S | Portfolio">
+    <link rel="canonical" href="#">
+    <title>Ashwikha Portfolio</title>
+    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ashwikha S",
+        "jobTitle": "Computer Science Engineering Student",
+        "email": "ashwikhas@gmail.com",
+        "telephone": "+917200125076",
+        "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "India" },
+        "alumniOf": "St. Joseph's College of Engineering",
+        "url": "#",
+        "sameAs": [
+            "https://github.com/Ashwikha",
+            "https://www.linkedin.com/in/ashwikha-suresh-kumar-639b3a368/",
+            "https://leetcode.com/u/ASHWIKHA/"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <span class="pl-bracket">&lt;</span><span class="pl-name">A</span><span class="pl-bracket">/&gt;</span>
+            </div>
+            <div class="preloader-bar"><div class="preloader-progress" id="preloaderProgress"></div></div>
+            <p class="preloader-text" id="preloaderText">Initializing...</p>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- Mouse Glow -->
+    <div class="mouse-glow" id="mouseGlow"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Command Palette -->
+    <div class="command-palette" id="commandPalette">
+        <div class="cmd-overlay"></div>
+        <div class="cmd-modal">
+            <div class="cmd-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="cmdInput" placeholder="Type a command or search..." autocomplete="off">
+                <kbd>ESC</kbd>
+            </div>
+            <div class="cmd-results" id="cmdResults">
+                <div class="cmd-group">
+                    <span class="cmd-group-title">Navigation</span>
+                    <button class="cmd-item" data-action="home"><i class="fas fa-home"></i> Go to Home</button>
+                    <button class="cmd-item" data-action="about"><i class="fas fa-user"></i> About Me</button>
+                    <button class="cmd-item" data-action="skills"><i class="fas fa-code"></i> Skills</button>
+                    <button class="cmd-item" data-action="experience"><i class="fas fa-briefcase"></i> Experience</button>
+                    <button class="cmd-item" data-action="contact"><i class="fas fa-envelope"></i> Contact</button>
+                </div>
+                <div class="cmd-group">
+                    <span class="cmd-group-title">Actions</span>
+                    <button class="cmd-item" data-action="resume"><i class="fas fa-download"></i> Download Resume</button>
+                    <button class="cmd-item" data-action="theme"><i class="fas fa-palette"></i> Change Theme</button>
+                    <button class="cmd-item" data-action="github"><i class="fab fa-github"></i> Open GitHub</button>
+                    <button class="cmd-item" data-action="linkedin"><i class="fab fa-linkedin"></i> Open LinkedIn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span><span class="logo-text">Ashwikha</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+                <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+                <li><a href="#profiles" class="nav-link" data-section="profiles">Profiles</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                <li><a href="#github-activity" class="nav-link" data-section="github-activity">Activity</a></li>
+                <li><a href="#mini-game" class="nav-link" data-section="mini-game">Game</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="cmd-trigger" id="cmdTrigger" aria-label="Command palette">
+                    <i class="fas fa-search"></i>
+                    <kbd>Ctrl+K</kbd>
+                </button>
+                <button class="theme-btn" id="themeBtn" aria-label="Theme switcher">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <div class="theme-panel" id="themePanel">
+                    <button data-theme="dark" class="tp-option active"><span class="tp-dot dark-dot"></span>Dark</button>
+                    <button data-theme="light" class="tp-option"><span class="tp-dot light-dot"></span>Light</button>
+                    <button data-theme="ocean" class="tp-option"><span class="tp-dot ocean-dot"></span>Ocean</button>
+                    <button data-theme="purple" class="tp-option"><span class="tp-dot purple-dot"></span>Purple</button>
+                    <button data-theme="matrix" class="tp-option"><span class="tp-dot matrix-dot"></span>Matrix</button>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-effects">
+            <div class="aurora"></div>
+            <div class="floating-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+            </div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Available for opportunities</span>
+                </div>
+                <div class="hero-intro">
+                    <span class="intro-line">Hello, I'm</span>
+                </div>
+                <h1 class="hero-name" data-text="Ashwikha S">
+                    <span class="name-line">Ashwikha S</span>
+                </h1>
+                <div class="hero-roles">
+                    <span class="role-prefix">&gt;</span>
+                    <span class="role-text" id="roleText"></span>
+                    <span class="role-cursor">|</span>
+                </div>
+                <p class="hero-desc">
+                    Passionate Computer Science student building scalable applications,
+                    mastering algorithms, and solving complex problems with elegant code.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="cta-primary">
+                        <span>Let's Connect</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="assets/resume.pdf" download class="cta-secondary">
+                        <i class="fas fa-download"></i>
+                        <span>Resume</span>
+                    </a>
+                    <a href="https://github.com/Ashwikha" target="_blank" rel="noopener noreferrer" class="cta-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ashwikha-suresh-kumar-639b3a368/" target="_blank" rel="noopener noreferrer" class="cta-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="hero-tech-stack">
+                    <span class="tech-label">Tech Stack</span>
+                    <div class="tech-icons">
+                        <div class="tech-icon" data-tooltip="C++"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" loading="lazy"></div>
+                        <div class="tech-icon" data-tooltip="C"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" loading="lazy"></div>
+                        <div class="tech-icon" data-tooltip="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" loading="lazy"></div>
+                        <div class="tech-icon" data-tooltip="VS Code"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" loading="lazy"></div>
+                        <div class="tech-icon" data-tooltip="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" loading="lazy"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <div class="card-glow"></div>
+                    <div class="profile-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-ring ring-2"></div>
+                        <div class="avatar-particles">
+                            <span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="code-window">
+                        <div class="cw-header">
+                            <div class="cw-dots"><span></span><span></span><span></span></div>
+                            <span class="cw-title">portfolio.cpp</span>
+                        </div>
+                        <div class="cw-body">
+                            <pre><code><span class="code-keyword">class</span> <span class="code-class">Ashwikha</span> {
+<span class="code-keyword">public</span>:
+  string role = <span class="code-string">"CS Student"</span>;
+  string passion = <span class="code-string">"Problem Solving"</span>;
+  float cgpa = <span class="code-number">9.23</span>;
+
+  <span class="code-keyword">void</span> <span class="code-func">solve</span>() {
+    <span class="code-comment">// Never stop learning</span>
+  }
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-left">
+                    <div class="about-card glass-card" data-reveal="left">
+                        <h3 class="about-heading">Who am I?</h3>
+                        <p>I'm a Computer Science Engineering student at <strong>St. Joseph's College of Engineering</strong>, Chennai. With a strong foundation in C++, Data Structures, Algorithms, and Object-Oriented Programming, I build efficient solutions to complex problems.</p>
+                        <p>Active across multiple competitive programming platforms including LeetCode, Codeforces, AtCoder, and Skillrack, I continuously push my boundaries in algorithmic thinking and code optimization.</p>
+                        <p>I'm passionate about software engineering and actively seeking opportunities to apply my technical skills in building scalable, real-world applications.</p>
+                    </div>
+                    <div class="fun-facts-grid">
+                        <div class="fun-fact glass-card" data-reveal="up">
+                            <i class="fas fa-coffee"></i>
+                            <span class="ff-value">500+</span>
+                            <span class="ff-label">Cups of Coffee</span>
+                        </div>
+                        <div class="fun-fact glass-card" data-reveal="up">
+                            <i class="fas fa-keyboard"></i>
+                            <span class="ff-value">1M+</span>
+                            <span class="ff-label">Lines Written</span>
+                        </div>
+                        <div class="fun-fact glass-card" data-reveal="up">
+                            <i class="fas fa-bug"></i>
+                            <span class="ff-value">999+</span>
+                            <span class="ff-label">Bugs Squashed</span>
+                        </div>
+                        <div class="fun-fact glass-card" data-reveal="up">
+                            <i class="fas fa-lightbulb"></i>
+                            <span class="ff-value">24/7</span>
+                            <span class="ff-label">Learning Mode</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="info-panel glass-card" data-reveal="right">
+                        <div class="info-row">
+                            <span class="info-key">Name</span>
+                            <span class="info-val">Ashwikha S</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">Education</span>
+                            <span class="info-val">B.E. Computer Science</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">University</span>
+                            <span class="info-val">St. Joseph's College of Engineering</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">Location</span>
+                            <span class="info-val">Chennai, Tamil Nadu</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">Email</span>
+                            <span class="info-val">ashwikhas@gmail.com</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">Phone</span>
+                            <span class="info-val">+91 72001 25076</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">CGPA</span>
+                            <span class="info-val highlight">9.23 / 10</span>
+                        </div>
+                    </div>
+                    <div class="learning-roadmap glass-card" data-reveal="right">
+                        <h4><i class="fas fa-route"></i> Currently Learning</h4>
+                        <div class="roadmap-items">
+                            <div class="rm-item"><span class="rm-dot active"></span>Advanced Data Structures</div>
+                            <div class="rm-item"><span class="rm-dot active"></span>Machine Learning</div>
+                            <div class="rm-item"><span class="rm-dot"></span>System Design</div>
+                            <div class="rm-item"><span class="rm-dot"></span>Web Development</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-showcase">
+                <!-- Skill Orbit -->
+                <div class="skill-orbit" data-reveal="scale">
+                    <div class="orbit-center">
+                        <span>Core</span>
+                        <span>Skills</span>
+                    </div>
+                    <div class="orbit-ring orbit-ring-1">
+                        <div class="orbit-item" style="--i:0; --total:3;" data-tooltip="C++">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                        </div>
+                        <div class="orbit-item" style="--i:1; --total:3;" data-tooltip="C">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                        </div>
+                        <div class="orbit-item" style="--i:2; --total:3;" data-tooltip="Python">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        </div>
+                    </div>
+                    <div class="orbit-ring orbit-ring-2">
+                        <div class="orbit-item" style="--i:0; --total:4;" data-tooltip="VS Code">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                        </div>
+                        <div class="orbit-item" style="--i:1; --total:4;" data-tooltip="GitHub">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                        </div>
+                        <div class="orbit-item" style="--i:2; --total:4;" data-tooltip="Git">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                        </div>
+                        <div class="orbit-item" style="--i:3; --total:4;" data-tooltip="Linux">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Bars -->
+                <div class="skills-detail">
+                    <div class="skill-category" data-reveal="right">
+                        <h3 class="sc-title"><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-bar-item">
+                            <div class="sb-header"><span>C++</span><span>90%</span></div>
+                            <div class="sb-track"><div class="sb-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="sb-header"><span>C</span><span>85%</span></div>
+                            <div class="sb-track"><div class="sb-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="sb-header"><span>Python</span><span>80%</span></div>
+                            <div class="sb-track"><div class="sb-fill" data-width="80"></div></div>
+                        </div>
+                    </div>
+                    <div class="skill-category" data-reveal="right">
+                        <h3 class="sc-title"><i class="fas fa-brain"></i> Core CS</h3>
+                        <div class="skill-bar-item">
+                            <div class="sb-header"><span>Data Structures</span><span>92%</span></div>
+                            <div class="sb-track"><div class="sb-fill" data-width="92"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="sb-header"><span>Algorithms</span><span>90%</span></div>
+                            <div class="sb-track"><div class="sb-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="sb-header"><span>OOP</span><span>88%</span></div>
+                            <div class="sb-track"><div class="sb-fill" data-width="88"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="sb-header"><span>Problem Solving</span><span>93%</span></div>
+                            <div class="sb-track"><div class="sb-fill" data-width="93"></div></div>
+                        </div>
+                    </div>
+                    <div class="skill-category" data-reveal="right">
+                        <h3 class="sc-title"><i class="fas fa-robot"></i> AI & ML</h3>
+                        <div class="skill-bar-item">
+                            <div class="sb-header"><span>ML Fundamentals</span><span>65%</span></div>
+                            <div class="sb-track"><div class="sb-fill" data-width="65"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="sb-header"><span>Prompt Engineering</span><span>70%</span></div>
+                            <div class="sb-track"><div class="sb-fill" data-width="70"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Experience & Education</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="exp-timeline">
+                <div class="exp-item" data-reveal="left">
+                    <div class="exp-marker"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="exp-card glass-card">
+                        <div class="exp-date">2025 - 2029</div>
+                        <h3>B.E. Computer Science Engineering</h3>
+                        <h4>St. Joseph's College of Engineering</h4>
+                        <span class="exp-badge">CGPA: 9.23</span>
+                        <p>Pursuing Computer Science with focus on algorithms, data structures, and software development.</p>
+                    </div>
+                </div>
+                <div class="exp-item" data-reveal="right">
+                    <div class="exp-marker"><i class="fas fa-users"></i></div>
+                    <div class="exp-card glass-card">
+                        <div class="exp-date">Jan 2026 - Present</div>
+                        <h3>Student Member</h3>
+                        <h4>House Of Programming Expertise (HOPE)</h4>
+                        <span class="exp-badge">Active</span>
+                        <ul>
+                            <li>Regular coding sessions in C++, Java, C, and DSA</li>
+                            <li>Competitive programming practice and challenges</li>
+                            <li>Peer collaboration on programming problems</li>
+                        </ul>
+                        <div class="exp-tech">
+                            <span>C++</span><span>Java</span><span>DSA</span><span>CP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-item" data-reveal="left">
+                    <div class="exp-marker"><i class="fas fa-robot"></i></div>
+                    <div class="exp-card glass-card">
+                        <div class="exp-date">Jun 2026</div>
+                        <h3>AI & Machine Learning Intern</h3>
+                        <h4>NTech Computer Education</h4>
+                        <span class="exp-badge">Completed</span>
+                        <ul>
+                            <li>20-day internship covering Python, AI & ML fundamentals</li>
+                            <li>File handling, collections, and real-world AI applications</li>
+                            <li>Hands-on practice strengthening development skills</li>
+                        </ul>
+                        <div class="exp-tech">
+                            <span>Python</span><span>AI</span><span>ML</span><span>Collections</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-item" data-reveal="right">
+                    <div class="exp-marker"><i class="fas fa-school"></i></div>
+                    <div class="exp-card glass-card">
+                        <div class="exp-date">2025</div>
+                        <h3>Higher Secondary (Class XII)</h3>
+                        <h4>Shri Anand Jain Vidyalaya Mat. Hr. Sec. School</h4>
+                        <span class="exp-badge">92%</span>
+                    </div>
+                </div>
+                <div class="exp-item" data-reveal="left">
+                    <div class="exp-marker"><i class="fas fa-book"></i></div>
+                    <div class="exp-card glass-card">
+                        <div class="exp-date">2023</div>
+                        <h3>Secondary (Class X)</h3>
+                        <h4>Shri Anand Jain Vidyalaya Mat. Hr. Sec. School</h4>
+                        <span class="exp-badge">78%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Achievements</h2>
+                <div class="section-line"></div>
+            </div>
+            <!-- Animated Counters -->
+            <div class="counters-grid">
+                <div class="counter-card glass-card" data-reveal="up">
+                    <div class="counter-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="counter-value" data-count="9.23" data-decimal="true" data-suffix="">0</div>
+                    <div class="counter-label">CGPA</div>
+                </div>
+                <div class="counter-card glass-card" data-reveal="up">
+                    <div class="counter-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="counter-value" data-count="20" data-suffix=" Days">0</div>
+                    <div class="counter-label">Internship</div>
+                </div>
+                <div class="counter-card glass-card" data-reveal="up">
+                    <div class="counter-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="counter-value" data-count="5" data-suffix="+">0</div>
+                    <div class="counter-label">Platforms</div>
+                </div>
+                <div class="counter-card glass-card" data-reveal="up">
+                    <div class="counter-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="counter-value" data-count="2" data-suffix="">0</div>
+                    <div class="counter-label">Certifications</div>
+                </div>
+            </div>
+            <!-- Certifications -->
+            <div class="certs-section">
+                <h3 class="sub-heading" data-reveal="up">Certifications & Courses</h3>
+                <div class="certs-grid">
+                    <div class="cert-card glass-card" data-reveal="up">
+                        <div class="cert-header">
+                            <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+                            <div class="cert-badge-score">87%</div>
+                        </div>
+                        <h4>Fundamentals of Computing</h4>
+                        <p class="cert-org">INI</p>
+                        <div class="cert-bar"><div class="cert-fill" data-width="87"></div></div>
+                    </div>
+                    <div class="cert-card glass-card" data-reveal="up">
+                        <div class="cert-header">
+                            <div class="cert-icon"><i class="fab fa-python"></i></div>
+                            <div class="cert-badge-score">77%</div>
+                        </div>
+                        <h4>Python for Data Science</h4>
+                        <p class="cert-org">NPTEL</p>
+                        <div class="cert-bar"><div class="cert-fill" data-width="77"></div></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Badges -->
+            <div class="badges-showcase" data-reveal="up">
+                <div class="badge-chip"><i class="fas fa-puzzle-piece"></i> Problem Solver</div>
+                <div class="badge-chip"><i class="fas fa-code"></i> C++ Developer</div>
+                <div class="badge-chip"><i class="fab fa-python"></i> Python Coder</div>
+                <div class="badge-chip"><i class="fas fa-robot"></i> AI Enthusiast</div>
+                <div class="badge-chip"><i class="fas fa-trophy"></i> Competitive Programmer</div>
+                <div class="badge-chip"><i class="fas fa-graduation-cap"></i> Academic Excellence</div>
+                <div class="badge-chip"><i class="fas fa-users"></i> Team Player</div>
+                <div class="badge-chip"><i class="fas fa-lightbulb"></i> Quick Learner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding Profiles -->
+    <section id="profiles" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Coding Profiles</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="profiles-grid">
+                <a href="https://leetcode.com/u/ASHWIKHA/" target="_blank" rel="noopener noreferrer" class="profile-card glass-card" data-reveal="up">
+                    <div class="pc-logo lc-logo"><i class="fas fa-code"></i></div>
+                    <div class="pc-info">
+                        <h3>LeetCode</h3>
+                        <p>Algorithmic challenges & interview prep</p>
+                    </div>
+                    <div class="pc-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <a href="https://codeforces.com/profile/Ashwikha" target="_blank" rel="noopener noreferrer" class="profile-card glass-card" data-reveal="up">
+                    <div class="pc-logo cf-logo"><i class="fas fa-trophy"></i></div>
+                    <div class="pc-info">
+                        <h3>Codeforces</h3>
+                        <p>Competitive programming contests</p>
+                    </div>
+                    <div class="pc-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <a href="https://atcoder.jp/users/Ashwikha" target="_blank" rel="noopener noreferrer" class="profile-card glass-card" data-reveal="up">
+                    <div class="pc-logo ac-logo"><i class="fas fa-bolt"></i></div>
+                    <div class="pc-info">
+                        <h3>AtCoder</h3>
+                        <p>Algorithm contests & problem solving</p>
+                    </div>
+                    <div class="pc-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <a href="https://www.skillrack.com/faces/resume.xhtml?id=538454&key=bfbd9f72f7808bdfeb75c9c24efd6e11e823d68e" target="_blank" rel="noopener noreferrer" class="profile-card glass-card" data-reveal="up">
+                    <div class="pc-logo sr-logo"><i class="fas fa-chart-line"></i></div>
+                    <div class="pc-info">
+                        <h3>Skillrack</h3>
+                        <p>Coding practice & fundamentals</p>
+                    </div>
+                    <div class="pc-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <a href="https://github.com/Ashwikha" target="_blank" rel="noopener noreferrer" class="profile-card glass-card" data-reveal="up">
+                    <div class="pc-logo gh-logo"><i class="fab fa-github"></i></div>
+                    <div class="pc-info">
+                        <h3>GitHub</h3>
+                        <p>Open source & project hosting</p>
+                    </div>
+                    <div class="pc-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <a href="https://www.linkedin.com/in/ashwikha-suresh-kumar-639b3a368/" target="_blank" rel="noopener noreferrer" class="profile-card glass-card" data-reveal="up">
+                    <div class="pc-logo li-logo"><i class="fab fa-linkedin"></i></div>
+                    <div class="pc-info">
+                        <h3>LinkedIn</h3>
+                        <p>Professional networking</p>
+                    </div>
+                    <div class="pc-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-info" data-reveal="left">
+                    <h3>Let's work together</h3>
+                    <p>I'm always open to discussing software engineering opportunities, competitive programming, or tech collaborations.</p>
+                    <div class="contact-methods">
+                        <div class="cm-item">
+                            <div class="cm-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="cm-detail">
+                                <span class="cm-label">Email</span>
+                                <a href="mailto:ashwikhas@gmail.com">ashwikhas@gmail.com</a>
+                            </div>
+                            <button class="copy-btn" data-copy="ashwikhas@gmail.com"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="cm-item">
+                            <div class="cm-icon"><i class="fas fa-phone"></i></div>
+                            <div class="cm-detail">
+                                <span class="cm-label">Phone</span>
+                                <a href="tel:+917200125076">+91 72001 25076</a>
+                            </div>
+                            <button class="copy-btn" data-copy="+917200125076"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="cm-item">
+                            <div class="cm-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="cm-detail">
+                                <span class="cm-label">Location</span>
+                                <span>Chennai, Tamil Nadu, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="availability-status">
+                        <span class="avail-dot"></span>
+                        <span>Currently available for internships & projects</span>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper" data-reveal="right">
+                    <form class="contact-form glass-card" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Name</label>
+                                <input type="text" id="contactName" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email</label>
+                                <input type="email" id="contactEmail" placeholder="john@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" placeholder="Let's collaborate!">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" rows="5" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- GitHub Heatmap Section -->
+    <section id="github-activity" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">07</span>
+                <h2 class="section-title">GitHub Activity</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="github-heatmap-card glass-card">
+                <div class="heatmap-header">
+                    <h3><i class="fab fa-github"></i> Contribution Heatmap</h3>
+                    <span class="heatmap-year">2026</span>
+                </div>
+                <div class="heatmap-grid" id="heatmapGrid"></div>
+                <div class="heatmap-legend">
+                    <span>Less</span>
+                    <div class="legend-boxes">
+                        <span class="lb" style="--level:0"></span>
+                        <span class="lb" style="--level:1"></span>
+                        <span class="lb" style="--level:2"></span>
+                        <span class="lb" style="--level:3"></span>
+                        <span class="lb" style="--level:4"></span>
+                    </div>
+                    <span>More</span>
+                </div>
+                <div class="heatmap-stats">
+                    <div class="hs-item"><span class="hs-val" id="totalContribs">0</span><span class="hs-label">Contributions</span></div>
+                    <div class="hs-item"><span class="hs-val" id="currentStreak">0</span><span class="hs-label">Day Streak</span></div>
+                    <div class="hs-item"><span class="hs-val" id="longestStreak">0</span><span class="hs-label">Longest Streak</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Globe -->
+    <section id="globe" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">08</span>
+                <h2 class="section-title">Learning Journey</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="globe-container">
+                <div class="globe-wrapper">
+                    <canvas id="globeCanvas" width="500" height="500"></canvas>
+                </div>
+                <div class="globe-info glass-card">
+                    <h3><i class="fas fa-map-marked-alt"></i> My Journey Map</h3>
+                    <div class="journey-points">
+                        <div class="jp-item"><span class="jp-dot" style="--color: #6366f1"></span><span>Chennai, India</span><span class="jp-desc">Home & University</span></div>
+                        <div class="jp-item"><span class="jp-dot" style="--color: #06b6d4"></span><span>Online Platforms</span><span class="jp-desc">LeetCode, Codeforces, AtCoder</span></div>
+                        <div class="jp-item"><span class="jp-dot" style="--color: #00d4aa"></span><span>NTech Education</span><span class="jp-desc">AI/ML Internship</span></div>
+                        <div class="jp-item"><span class="jp-dot" style="--color: #f59e0b"></span><span>Global Community</span><span class="jp-desc">Open Source & Collaboration</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini Game - Typing Speed -->
+    <section id="mini-game" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">09</span>
+                <h2 class="section-title">Typing Speed Challenge</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="game-container glass-card">
+                <div class="game-header">
+                    <div class="game-score">WPM: <span id="gameWpm">0</span></div>
+                    <div class="game-time">Time: <span id="gameTime">30</span>s</div>
+                    <div class="game-high">Best: <span id="gameHigh">0</span> WPM</div>
+                </div>
+                <div class="game-area" id="gameArea">
+                    <div class="game-start-overlay" id="gameStartOverlay">
+                        <i class="fas fa-keyboard"></i>
+                        <h3>Typing Speed Test</h3>
+                        <p>How fast can you type code snippets?</p>
+                        <button class="game-start-btn" id="gameStartBtn">Start Challenge</button>
+                    </div>
+                    <div class="typing-game hidden" id="typingGame">
+                        <div class="typing-display" id="typingDisplay"></div>
+                        <input type="text" class="typing-input" id="typingInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Start typing...">
+                        <div class="typing-stats">
+                            <span class="ts-item"><i class="fas fa-check"></i> <span id="correctWords">0</span> correct</span>
+                            <span class="ts-item"><i class="fas fa-times"></i> <span id="wrongWords">0</span> errors</span>
+                            <span class="ts-item"><i class="fas fa-percentage"></i> <span id="accuracy">100</span>% accuracy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-footer">
+                    <p><i class="fas fa-info-circle"></i> Type the code snippets as fast and accurately as you can!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Badges (Unlockable) -->
+    <div class="achievement-popup" id="achievementPopup">
+        <div class="ap-icon"><i class="fas fa-medal"></i></div>
+        <div class="ap-content">
+            <span class="ap-title" id="apTitle">Achievement Unlocked!</span>
+            <span class="ap-desc" id="apDesc"></span>
+        </div>
+    </div>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-robot"></i>
+    </div>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="cb-header">
+            <div class="cb-title"><i class="fas fa-robot"></i> Ask Me Anything</div>
+            <button class="cb-close" id="cbClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cb-messages" id="cbMessages">
+            <div class="cb-msg bot">
+                <span>Hi! I'm Ashwikha's AI assistant. Ask me about skills, education, experience, or anything else!</span>
+            </div>
+        </div>
+        <div class="cb-input-wrap">
+            <input type="text" id="cbInput" placeholder="Type a question..." autocomplete="off">
+            <button id="cbSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Music Toggle -->
+    <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
+        <i class="fas fa-volume-mute" id="musicIcon"></i>
+    </button>
+    <audio id="bgMusic" loop preload="none">
+        <source src="assets/bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" id="langBtn"><i class="fas fa-globe"></i> <span id="currentLang">EN</span></button>
+        <div class="lang-menu" id="langMenu">
+            <button class="lang-option active" data-lang="en">English</button>
+            <button class="lang-option" data-lang="ta">தமிழ்</button>
+            <button class="lang-option" data-lang="hi">हिन्दी</button>
+        </div>
+    </div>
+
+    <!-- Visitor Counter -->
+    <div class="visitor-counter" id="visitorCounter">
+        <i class="fas fa-eye"></i>
+        <span id="visitorCount">0</span> visits
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,40 C320,80 640,0 960,40 C1280,80 1440,20 1440,20 L1440,100 L0,100 Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-bracket">&lt;</span><span class="logo-text">Ashwikha</span><span class="logo-bracket">/&gt;</span>
+                    <p>Building the future, one line of code at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="fl-group">
+                        <h4>Quick Links</h4>
+                        <a href="#about">About</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="fl-group">
+                        <h4>Profiles</h4>
+                        <a href="https://github.com/Ashwikha" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://leetcode.com/u/ASHWIKHA/" target="_blank" rel="noopener noreferrer">LeetCode</a>
+                        <a href="https://www.linkedin.com/in/ashwikha-suresh-kumar-639b3a368/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://codeforces.com/profile/Ashwikha" target="_blank" rel="noopener noreferrer">Codeforces</a>
+                    </div>
+                </div>
+                <div class="footer-socials">
+                    <a href="mailto:ashwikhas@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/Ashwikha" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ashwikha-suresh-kumar-639b3a368/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/ASHWIKHA/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Ashwikha S. Crafted with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+                <p class="footer-kbd">Press <kbd>Ctrl</kbd>+<kbd>K</kbd> to navigate</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+        <svg class="btt-progress" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22"/></svg>
+    </button>
+
+    <!-- Quote Toast -->
+    <div class="quote-toast" id="quoteToast">
+        <i class="fas fa-quote-left"></i>
+        <p id="quoteText"></p>
+    </div>
+
+    <script src="script.js?v=8"></script>
+</body>
+</html>
